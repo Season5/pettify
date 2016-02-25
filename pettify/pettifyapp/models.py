@@ -8,6 +8,7 @@ from django.utils import timezone
 class Animal(models.Model):
 	image = models.FileField(null=True, blank=True)
 	category = models.CharField(max_length=100)
+	name = models.CharField(max_length=60)
 	shelter = models.CharField(max_length=60)
 	age = models.IntegerField(default=0)
 	gender = models.CharField(max_length=20)
