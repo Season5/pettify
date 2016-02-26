@@ -15,13 +15,13 @@ class Animal(models.Model):
 		('female', female),
 	)
 	image = models.FileField(null=True, blank=True)
-	category = models.CharField(max_length=100)
+	category = models.CharField(max_length=60)
 	name = models.CharField(max_length=60)
 	shelter = models.CharField(max_length=60)
 	age = models.IntegerField(default=0)
 	gender = models.CharField(default=none, choices=gender_choices, max_length=6)
 	pub_date = models.DateTimeField('date published')
-
+	
 	def __unicode__(self):
 		return self.category
 

@@ -5,7 +5,7 @@
 <!-- Don't use <html>, <body>, <head> -->
 {% if newest_animals_list %}
     {% for all_animals in newest_animals_list %}
-    <h3><a href="{% url 'pettifyapp:category' %}">{{ all_animals.category }}</a></h3>
+    <h3>{{ all_animals.category }}</h3>
     {{ all_animals.name }}
     
     {% endfor %}

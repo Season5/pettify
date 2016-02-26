@@ -17,7 +17,10 @@ def listing(request):
 	return render(request, 'pettifyapp/animals.html', context)
 
 def category(request):
-	return HttpResponse("You're looking at page 3")
+	category_list = Animal.objects.all()
+	categ = category_list.filter()
+	if Animal.filter(headline=category_list):
+		return render(request, 'pettifyapp/category.html')
 
 def result(request, id):
 	animal = get_object_or_404(Animal, pk=id)
