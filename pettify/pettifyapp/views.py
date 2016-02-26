@@ -8,7 +8,7 @@ def index(request):
     return render(request, 'pettifyapp/index.html')
 
 def listing(request):
-	newest_animals_list = Animal.objects.all()
+	newest_animals_list = Animal.objects.order_by('category')
 	# order_by('pub_date')[:5]
 	template = loader.get_template('pettifyapp/animals.html')
 	context = {
@@ -17,10 +17,7 @@ def listing(request):
 	return render(request, 'pettifyapp/animals.html', context)
 
 def category(request):
-	category_list = Animal.objects.all()
-	categ = category_list.filter()
-	if Animal.filter(headline=category_list):
-		return render(request, 'pettifyapp/category.html')
+	return render(request, 'pettifyapp/category.html')
 
 def result(request, id):
 	animal = get_object_or_404(Animal, pk=id)

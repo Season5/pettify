@@ -3,13 +3,13 @@
 {% block content %}
 <!-- Type html stuff here -->
 <!-- Don't use <html>, <body>, <head> -->
-{% if newest_animals_list %}
-    {% for all_animals in newest_animals_list %}
+{% if category_list %}
+    {% for all_animals in category_list %}
     <h3>{{ all_animals.category }}</h3>
     {{ all_animals.name }}
     
     {% endfor %}
 {% else %}
-    <p>No animals_list are available.</p>
+    <p>No list are available.</p>
 {% endif %}
 {% endblock content %}
